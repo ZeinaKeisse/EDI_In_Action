@@ -279,3 +279,7 @@ without altering the programme's teaching cases, team credits, video playback,
 noindex directives or existing activity downloads. It is a local release
 package for GitHub Pages; uploading to GitHub or other hosting is a separate
 action.
+
+## Optional Padlet discussion navigation
+
+The action-plan sidebar includes **Explore the optional Padlet discussion**, which scrolls directly to the site's **Connect with Other Educators** section. This does not open Padlet or post any personal notes. Visitors review the prompts and privacy guidance before optionally opening Padlet in a separate tab. A shareable `#padlet-discussion` route opens the same section directly.

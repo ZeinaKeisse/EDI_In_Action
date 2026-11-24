@@ -2,3 +2,12 @@
 @media(max-width:850px){.contribute-shell .plan-layout{grid-template-columns:1fr}.contribute-shell .plan-aside{display:grid;grid-template-columns:1fr 1fr;gap:18px}.contribute-shell .plan-aside>div,.contribute-shell .plan-aside>details{margin-bottom:0}.contribute-shell .plan-aside>details{grid-column:1/-1;grid-row:2}.contribute-connect{grid-template-columns:1fr;gap:15px}.contribute-connect .connect-heading>p:last-child{margin-bottom:0}}
 @media(max-width:620px){.contribute-intro{padding-top:28px}.contribute-shell .plan-aside{display:block}.contribute-shell .plan-aside>div,.contribute-shell .plan-aside>details{margin-bottom:18px}.contribute-shell .plan-form{padding:22px}.plan-lens{padding:17px}.contribute-connect{padding:24px}.contribute-connect .btn{white-space:normal;text-align:center}.case-journey a span{font-size:.875rem}.case-explore-stages{gap:20px}}
 @media print{#main>.contribute-shell>:not(.print-only){display:none!important}#main>.contribute-shell>.print-only{display:block}.contribute-shell{padding:0}.print-only section{break-inside:avoid}.print-only h2{break-after:avoid}.print-only .print-prompt{font-size:10pt;color:#444}}
+
+/* Invite visitors from their private plan to the on-site, optional discussion guidance. */
+.contribute-shell .plan-aside .plan-padlet-notice{background:#f5f0f8;}
+.contribute-shell .plan-aside .plan-padlet-jump{display:inline-flex;align-items:center;gap:.65rem;max-width:100%;white-space:normal;text-align:left;line-height:1.4;margin:7px 0 0;padding:11px 14px;text-decoration:none;}
+.plan-padlet-jump [aria-hidden]{font-size:1.25rem;line-height:1;}
+.contribute-shell .plan-aside .plan-padlet-explainer{font-size:.86rem;line-height:1.6;margin:10px 0 12px;color:#55475e;}
+#padlet-discussion,#connect-title{scroll-margin-top:24px;}
+#connect-title:focus{outline:3px solid #563e61;outline-offset:5px;border-radius:3px;}
+@media(max-width:620px){.contribute-shell .plan-aside .plan-padlet-jump{width:100%;justify-content:center;}}
