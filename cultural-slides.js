@@ -14,7 +14,7 @@ function culturalSlideMediaMarkup(slide) {
 }
 
 function culturalSlideVideoHelpMarkup(slide) {
-  return hasCulturalSlideVideo(slide) ? `<p class="cultural-slide-video-instructions">The video attempts to play automatically with sound. If your browser blocks playback or starts it silently, press Play or use the player’s sound control to unmute. You can pause at any time. Changing slides stops playback.</p>${sourceLink('https://www.fnesc.ca/authenticresources/', 'If the video is unavailable, view it on FNESC’s resource page')}` : '';
+  return hasCulturalSlideVideo(slide) ? `<p class="cultural-slide-video-instructions">The video attempts to play automatically with sound. If your browser blocks playback or starts it silently, press Play or use the player’s sound control to unmute. You can pause at any time. Changing slides stops playback.</p><p>English captions are on by default. Use <strong>Captions on/off</strong> to change their visibility. Choose <strong>Expand slideshow</strong> to enlarge the video and keep the captions visible together. These website captions are not shown in Vimeo’s separate fullscreen or picture-in-picture views.</p>${sourceLink('https://www.fnesc.ca/authenticresources/', 'If the video is unavailable, view it on FNESC’s resource page')}${culturalVideoTranscriptMarkup(slide)}` : '';
 }
 
 function culturalSlideResourceCard() {
@@ -28,16 +28,17 @@ function culturalSlides() {
   const slide = culturalSlidesData[index];
   return `<div class="shell cultural-slides-shell${culturalSlideState.expanded ? ' is-expanded' : ''}">
     ${culturalBreadcrumb('Presentation')}
-    <header class="cultural-slides-intro"><p class="eyebrow">Cultural representation · Optional presentation</p><h1>Choosing Indigenous Resources: Questions for Reflection</h1><p class="cultural-slide-credit">Presentation by Shishona Austin</p><p>Original presentation: <em>Authentic Indigenous Resources</em>. Explore the slides at your own pace, or read the slide text below. The main cultural representation activity can be completed without viewing this presentation.</p><p>For prompts that invite discussion with a partner, you may reflect independently or explore them with colleagues. Slide 4 loads a Vimeo video automatically and attempts to play with sound.</p></header>
+    <header class="cultural-slides-intro"><p class="eyebrow">Cultural representation · Optional presentation</p><h1>Choosing Indigenous Resources: Questions for Reflection</h1><p class="cultural-slide-credit">Presentation by Shishona Austin</p><p>Original presentation: <em>Authentic Indigenous Resources</em>. Explore the slides at your own pace, or read the slide text below. The main cultural representation activity can be completed without viewing this presentation.</p><p>For prompts that invite discussion with a partner, you may reflect independently or explore them with colleagues. Slide 4 loads a Vimeo video automatically and attempts to play with sound. English captions and a readable video transcript are provided on that slide.</p></header>
     <section id="cultural-slide-viewer" class="cultural-slide-viewer" aria-label="Shishona Austin’s presentation">
       <div class="cultural-slide-controls"><div class="cultural-slide-step-controls"><button type="button" class="btn secondary" data-cultural-slide-step="-1"${index === 0 ? ' disabled' : ''}>Previous slide</button><p id="cultural-slide-counter" role="status" aria-live="polite" aria-atomic="true">Slide ${index + 1} of ${total}</p><button type="button" class="btn secondary" data-cultural-slide-step="1"${index === total - 1 ? ' disabled' : ''}>Next slide</button></div><div class="cultural-slide-jump"><label for="cultural-slide-select">Choose a slide</label><div class="cultural-slide-select-wrap"><select id="cultural-slide-select">${culturalSlidesData.map((item, i) => `<option value="${i}"${i === index ? ' selected' : ''}>${i + 1}. ${esc(item.title)}</option>`).join('')}</select></div></div><button type="button" id="cultural-slide-expand" class="btn secondary cultural-slide-expand" data-cultural-expand aria-pressed="${culturalSlideState.expanded}" aria-controls="cultural-slide-viewer">${culturalSlideState.expanded ? 'Return to standard view' : 'Expand slideshow'}</button></div>
       <h2 id="cultural-slide-title" class="cultural-slide-title">${esc(slide.title)}</h2>
       <figure class="cultural-slide-figure"><div id="cultural-slide-stage" class="cultural-slide-stage${hasCulturalSlideVideo(slide) ? ' has-video' : ''}"><img id="cultural-slide-image" src="${culturalSlideAsset(index)}" alt="Slide ${index + 1}: ${esc(slide.title)}. The slide text is available below." width="720" height="540"><div id="cultural-slide-media" class="cultural-slide-media"${hasCulturalSlideVideo(slide) ? '' : ' hidden'}>${culturalSlideMediaMarkup(slide)}</div></div></figure>
+      <div id="cultural-slide-captions">${culturalVideoCaptionPanelMarkup(slide)}</div>
       <div id="cultural-slide-video-help" class="cultural-slide-video-help">${culturalSlideVideoHelpMarkup(slide)}</div>
       <details class="cultural-slide-text" open><summary>Read this slide’s text</summary><div id="cultural-slide-text-content">${culturalSlideTextMarkup(slide)}</div></details>
       <p class="cultural-slide-viewer-help">Use Previous slide, Next slide, or the slide menu. Choose Expand slideshow for a larger view on this page; Return to standard view restores the original size. You can also press Escape while focus is outside the video. There is no automatic slide advance or time limit. Links within the slide text open separately.</p>
     </section>
-    <section class="cultural-slide-downloads" aria-labelledby="cultural-slide-downloads-title"><div><h2 id="cultural-slide-downloads-title">Keep a copy</h2><p>Download the slides as a PDF or keep the accompanying text. Video playback is available in the website’s slideshow; videos are not included in the PDF.</p></div><div class="cultural-slide-download-links"><a class="btn secondary" href="assets/cultural-slides/Authentic_Indigenous_Resources.pdf" download="Authentic_Indigenous_Resources.pdf">Download PDF</a><a class="text-link" href="assets/cultural-slides/Authentic_Indigenous_Resources.txt" download="Authentic_Indigenous_Resources.txt">Download slide text</a></div></section>
+    <section class="cultural-slide-downloads" aria-labelledby="cultural-slide-downloads-title"><div><h2 id="cultural-slide-downloads-title">Keep a copy</h2><p>Download the slides as a PDF or keep the accompanying text. Video playback is available in the website’s slideshow; videos are not included in the PDF. The video’s English captions and transcript can be downloaded separately on slide 4.</p></div><div class="cultural-slide-download-links"><a class="btn secondary" href="assets/cultural-slides/Authentic_Indigenous_Resources.pdf" download="Authentic_Indigenous_Resources.pdf">Download PDF</a><a class="text-link" href="assets/cultural-slides/Authentic_Indigenous_Resources.txt" download="Authentic_Indigenous_Resources.txt">Download slide text</a></div></section>
     <details class="cultural-all-slide-text"><summary>Read all slide text</summary>${culturalSlidesData.map((item, i) => `<section><h2>Slide ${i + 1}: ${esc(item.title)}</h2>${culturalSlideTextMarkup(item)}</section>`).join('')}</details>
     <div class="cultural-slides-return"><a class="btn" href="#culture-explore">Continue to the resource review</a><a class="text-link" href="#culture">Return to the scenario</a><a class="text-link" href="#toolkit">Explore the EDI Toolkit</a></div>
   </div>`;
@@ -48,6 +49,7 @@ function setCulturalSlide(nextIndex) {
   const image = document.querySelector('#cultural-slide-image');
   if (!image) return;
   if (index === culturalSlideState.index) return;
+  stopCulturalVideoCaptions();
   culturalSlideState.index = index;
   const slide = culturalSlidesData[index];
   const media = document.querySelector('#cultural-slide-media');
@@ -58,12 +60,14 @@ function setCulturalSlide(nextIndex) {
   document.querySelector('#cultural-slide-stage').classList.toggle('has-video', hasCulturalSlideVideo(slide));
   media.hidden = !hasCulturalSlideVideo(slide);
   media.innerHTML = culturalSlideMediaMarkup(slide);
+  document.querySelector('#cultural-slide-captions').innerHTML = culturalVideoCaptionPanelMarkup(slide);
   document.querySelector('#cultural-slide-video-help').innerHTML = culturalSlideVideoHelpMarkup(slide);
   document.querySelector('#cultural-slide-text-content').innerHTML = culturalSlideTextMarkup(slide);
   document.querySelector('#cultural-slide-select').value = String(index);
   document.querySelector('[data-cultural-slide-step="-1"]').disabled = index === 0;
   document.querySelector('[data-cultural-slide-step="1"]').disabled = index === culturalSlidesData.length - 1;
   document.querySelector('#cultural-slide-counter').textContent = `Slide ${index + 1} of ${culturalSlidesData.length}`;
+  startCulturalVideoCaptions();
 }
 
 function setCulturalSlideExpanded(expanded) {

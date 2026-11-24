@@ -29,7 +29,7 @@ const culturalSlidesData = [
   {
     "title": "FNESC: The importance of Including Authentic First Peoples Resources in BC Classrooms (2021)",
     "paragraphs": [
-      "Video: The Importance of Including Authentic First Peoples Resources in BC Classrooms (FNESC, 2021). On this website, the Vimeo player loads automatically when you reach this slide and attempts to play with sound. If your browser blocks playback or starts it silently, press Play or use the player’s sound control to unmute. You can pause at any time. Moving to another slide stops playback. An internet connection is required. If the player is unavailable, use the FNESC resource-page link below. The slide text does not include a transcript of the video."
+      "Video: The Importance of Including Authentic First Peoples Resources in BC Classrooms (FNESC, 2021). On this website, the Vimeo player loads automatically when you reach this slide and attempts to play with sound. If your browser blocks playback or starts it silently, press Play or use the player’s sound control to unmute. You can pause at any time. Moving to another slide stops playback. An internet connection is required. If the player is unavailable, use the FNESC resource-page link below. English captions prepared by Zeina Keisse appear below the video and are on by default. Use Captions on/off to show or hide them, or Expand slideshow to enlarge the video and captions together. The website captions are not shown in Vimeo’s separate fullscreen or picture-in-picture views. Open Read video transcript for the supplied transcript, or use Download video transcript (.txt) and Download captions (.vtt) to keep copies. The slide text and video transcript are separate."
     ],
     "links": [
       {

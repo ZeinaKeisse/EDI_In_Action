@@ -1,0 +1,35 @@
+.padlet-prompt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0 24px}
+.padlet-prompt-grid>div{background:#f1edf5;border:1px solid #aa92b7;border-radius:13px;padding:16px 15px;display:flex;flex-direction:column;gap:8px}
+.padlet-prompt-grid strong{color:#452c56;font-size:1rem;line-height:1.4}
+.padlet-prompt-grid span{font-size:.89rem;line-height:1.5;color:#413847}
+.padlet-eyebrow{letter-spacing:.1em}
+/* Stronger form, placeholder, keyboard-focus and Padlet discussion styling. */
+.form-field textarea,.form-field input,.plan-form input,.plan-form textarea,input:not([type=checkbox]):not([type=radio]),textarea{border-color:#8b7897}
+:where(input,textarea)::placeholder{color:#625468!important;opacity:1}
+:where(button,a,summary,input,textarea,select,[tabindex]):focus-visible{outline:3px solid #3c244b!important;outline-offset:3px!important;box-shadow:0 0 0 2px white,0 0 0 5px #422651}
+:where(.ei-journey button,.ei-lens-buttons button,.btn):focus-visible{outline-color:#fff!important;box-shadow:0 0 0 3px #3c244b}
+@media(max-width:800px){.padlet-prompt-grid{grid-template-columns:1fr}}
+
+
+/* Browser-supported optional read-aloud toolbar. */
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.read-aloud-bar{border-bottom:1px solid #d9cede;background:#f7f4f9;padding:11px 5% 10px;color:#44334f}
+.ra-shell{max-width:1260px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px 22px;flex-wrap:wrap}
+.ra-identity{display:flex;gap:10px;align-items:center;min-width:210px}
+.ra-identity svg{flex:none;color:#674b7a}
+.ra-identity div{display:flex;flex-direction:column;line-height:1.35}
+.ra-identity strong{font-size:.92rem;letter-spacing:.005em}
+.ra-identity span{font-size:.74rem;color:#60536b;margin-top:2px}
+.ra-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ra-actions button,.ra-actions select{border:1px solid #9d89ad;background:white;color:#43304f;border-radius:8px;min-height:39px;padding:7px 12px;font-weight:600;font-size:.83rem;line-height:1.25}
+.ra-actions button:hover:not(:disabled){background:#ece5f1;border-color:#674b7a}
+.ra-actions .ra-start{background:#563e61;color:white;border-color:#563e61}
+.ra-actions .ra-start:hover:not(:disabled){background:#422a50;color:white}
+.ra-actions button:disabled{opacity:.5;cursor:not-allowed}
+.ra-actions label{font-size:.8rem;font-weight:600;white-space:nowrap;margin-left:4px}
+.ra-actions select{padding-right:8px;cursor:pointer}
+.ra-explanation{max-width:1260px;margin:5px auto 0;font-size:.73rem;color:#60536b;line-height:1.5}
+.ra-actions :is(button,select):focus-visible{outline:3px solid #392243!important;outline-offset:2px!important;box-shadow:0 0 0 3px #fff!important}
+@media(max-width:800px){.ra-shell{align-items:start}.ra-actions{width:100%}.ra-explanation{margin-top:9px}}
+@media(max-width:520px){.read-aloud-bar{padding-inline:5%}.ra-actions{gap:7px}.ra-actions button,.ra-actions select{min-height:44px;font-size:.83rem;padding:9px 10px}.ra-actions .ra-start{flex:1;min-width:160px}.ra-identity span{font-size:.78rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.read-aloud-bar *{transition:none!important;animation:none!important}}

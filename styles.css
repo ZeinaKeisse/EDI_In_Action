@@ -11,3 +11,4 @@
 .knowledge fieldset{border:0;padding:0;margin:0;min-width:0}.knowledge legend{padding:8px 0;font-weight:500}
 @media(max-width:620px){.site-header{gap:12px}.brand>span{font-size:1.42rem}.brand small{font-size:.51rem}.brand img{width:30px;height:38px}.brand{gap:8px}.menu-toggle{padding:8px 10px;font-size:.8rem}.hero h1{font-size:2.95rem}}
 .profile-review{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--line);grid-column:1/-1}.profile-review summary{cursor:pointer;color:var(--plum);font-size:.95rem;font-weight:600;line-height:1.5}.profile-review[open] summary{margin-bottom:1rem}.team-card .profile-review p{font-size:1rem;margin-bottom:1rem}
+.team-card .team-portrait{display:block;object-fit:cover;object-position:center}

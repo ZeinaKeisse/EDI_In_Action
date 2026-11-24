@@ -19,3 +19,30 @@
 @media(max-width:1000px){.cultural-slide-expand{margin-left:0}.is-expanded .cultural-slide-controls{flex-direction:row;align-items:flex-end}.is-expanded .cultural-slide-step-controls{flex:1 0 100%}.is-expanded .cultural-slide-jump{width:auto;max-width:none;flex:1 1 240px}.is-expanded .cultural-slide-expand{flex:0 1 210px}}
 @media(max-width:650px){.cultural-slides-shell.is-expanded{padding-inline:6px}.is-expanded .cultural-slide-viewer{padding:10px}.is-expanded .cultural-slide-controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;padding-block:10px}.is-expanded .cultural-slide-step-controls{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}.is-expanded .cultural-slide-step-controls p{font-size:.875rem}.is-expanded .cultural-slide-jump{min-width:0;width:100%}.is-expanded .cultural-slide-jump label{font-size:.875rem}.is-expanded .cultural-slide-expand{font-size:.875rem;padding:9px;min-height:46px}.is-expanded .cultural-slide-jump select{font-size:.875rem}.is-expanded .cultural-slide-controls .btn{padding-block:9px}}
 @media print{.cultural-slide-controls{position:static!important}.cultural-slide-expand{display:none}}
+
+/* Site-provided captions stay below the video so player controls remain clear. */
+.cultural-video-caption-panel{border:1px solid #d9cce2;border-radius:12px;background:#f7f3fa;margin:0 0 22px;overflow:hidden}
+.cultural-caption-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:14px 18px}
+.cultural-caption-toolbar h3{font-size:1rem;color:var(--plum);margin:0}
+.cultural-caption-toolbar .btn{min-height:44px;font-size:1rem;padding:10px 17px}
+.cultural-caption-display{display:flex;align-items:center;justify-content:center;background:#211c26;color:#fff;min-height:6rem;padding:14px 18px;text-align:center}
+.cultural-caption-display[hidden]{display:none}
+.cultural-caption-display p{font-family:Arial,sans-serif;font-size:clamp(1.05rem,1.7vw,1.35rem);font-weight:500;line-height:1.5;white-space:pre-line;overflow-wrap:anywhere;max-width:48em;margin:0}
+.cultural-caption-status,.cultural-caption-credit{font-size:.875rem;line-height:1.6;color:var(--plum);padding:0 18px;margin:12px 0}
+.cultural-caption-credit{padding-bottom:4px}
+.cultural-caption-status:empty{display:none}
+.cultural-video-transcript{border:1px solid #d9cce2;border-radius:11px;background:#f7f3fa;padding:20px 23px;margin:22px 0 16px}
+.cultural-video-transcript summary{font-size:1rem;font-weight:600;color:var(--plum);cursor:pointer;line-height:1.5}
+.cultural-video-transcript[open] summary{margin-bottom:20px}
+.cultural-video-transcript h3{font-size:1.3rem;line-height:1.4;margin:0 0 14px}
+.cultural-slide-video-help .cultural-video-transcript p{font-size:1rem;line-height:1.8;margin:0 0 18px;max-width:75ch}
+.cultural-slide-video-help .cultural-video-transcript p:last-child{margin-bottom:0}
+.cultural-slide-video-help .cultural-video-transcript .cultural-transcript-context{font-size:.9375rem;color:var(--muted)}
+.cultural-video-text-downloads{display:flex;flex-wrap:wrap;gap:12px 25px;padding:0 0 4px}
+.cultural-video-text-downloads .text-link{font-size:1rem;min-height:44px;display:inline-flex;align-items:center}
+.is-expanded .cultural-slide-stage.has-video{aspect-ratio:16/9;max-width:min(100%,max(280px,calc((100vh - 22rem) * 1.77778)))}
+.is-expanded .cultural-slide-stage.has-video>img{display:none}
+.is-expanded .cultural-slide-stage.has-video .cultural-slide-media{inset:0}
+.is-expanded #cultural-slide-captions{max-width:min(100%,max(280px,calc((100vh - 22rem) * 1.77778)));margin-inline:auto}
+@media(max-width:650px){.cultural-caption-toolbar{padding:12px 14px}.cultural-caption-display{padding:14px 12px;min-height:7rem}.cultural-caption-status,.cultural-caption-credit{padding-inline:14px}.cultural-video-transcript{padding:18px}.cultural-video-text-downloads{flex-direction:column;align-items:flex-start;gap:4px}}
+@media print{.cultural-video-caption-panel{display:none}.cultural-video-transcript{background:#fff}.cultural-video-text-downloads{display:none}}
